@@ -11,9 +11,6 @@
   </parent>
 
   <artifactId>showcase-boot</artifactId>
-<!--  <version>1.0-project-structure-SNAPSHOT</version>-->
-<!--  <name>showcase-boot</name>-->
-<!--  <description>Boot module for showcase-backend project</description>-->
   <packaging>jar</packaging>
 
   <properties>

@@ -10,9 +10,6 @@
 	</parent>
 
 	<artifactId>showcase-business-logic</artifactId>
-<!--	<version>1.0-project-structure-SNAPSHOT</version>-->
-<!--	<name>showcase-business-logic</name>-->
-<!--	<description>Business logic module for showcase-backend project.</description>-->
 	<packaging>jar</packaging>
 
 	<properties>
@@ -30,14 +27,5 @@
 			<version>${project.parent.version}</version>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 
 </project>
