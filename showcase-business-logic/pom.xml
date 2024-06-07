@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.maruf</groupId>
 		<artifactId>showcase-backend</artifactId>
-		<version>1.0-project-structure-SNAPSHOT</version>
+		<version>1.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>showcase-business-logic</artifactId>
