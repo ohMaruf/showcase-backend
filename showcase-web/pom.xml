@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.maruf</groupId>
 		<artifactId>showcase-backend</artifactId>
-		<version>1.0-domain-modeling-SNAPSHOT</version>
+		<version>1.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>showcase-web</artifactId>
@@ -30,7 +30,7 @@
 		<dependency>
 			<groupId>com.maruf</groupId>
 			<artifactId>showcase-domain</artifactId>
-			<version>1.0-domain-modeling-SNAPSHOT</version>
+			<version>1.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 
