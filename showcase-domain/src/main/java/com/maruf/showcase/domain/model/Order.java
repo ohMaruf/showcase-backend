@@ -13,19 +13,17 @@ import org.hibernate.annotations.ColumnDefault;
 @Getter
 @Setter
 @Entity
-@Table(name = "tb_review")
-public class Review {
+@Table(name = "tb_order")
+public class Order {
 
   @Id
-  @ColumnDefault("nextval('tb_review_id_seq'::regclass)")
+  @ColumnDefault("nextval('tb_order_id_seq'::regclass)")
   @Column(name = "id", nullable = false)
   private Integer id;
 
-  @Column(name = "description", nullable = false, length = 500)
-  private String description;
-
-  @Column(name = "rating", nullable = false)
-  private Short rating;
+  @ColumnDefault("1")
+  @Column(name = "quantity", nullable = false)
+  private Short quantity;
 
   @ManyToOne
   @JoinColumn(name = "user_id", nullable = false)
