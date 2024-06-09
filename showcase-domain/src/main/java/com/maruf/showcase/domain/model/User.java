@@ -41,4 +41,7 @@ public class User {
   @JoinColumn(name = "city_id", nullable = false)
   private City city;
 
+  public String getFullName() {
+    return name + " " + surname;
+  }
 }

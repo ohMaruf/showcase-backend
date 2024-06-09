@@ -1,17 +1,17 @@
 package com.maruf.showcase.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.validation.constraints.NotNull;
+import lombok.Data;
+import org.hibernate.validator.constraints.Range;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 public class ReviewDto {
 
-  private String name;
+  @NotNull(message = "review id field is mandatory")
+  private String authorName;
+  @NotNull(message = "review textContent field is mandatory")
   private String textContent;
-  private Short stars;
+  @NotNull(message = "review start field is mandatory")
+  @Range(min = 1, max = 5)
+  private Short rating;
 }

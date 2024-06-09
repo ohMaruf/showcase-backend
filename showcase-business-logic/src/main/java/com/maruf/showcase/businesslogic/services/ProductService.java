@@ -37,18 +37,26 @@ public class ProductService {
     Integer sales = orderRepository.countByProduct(product.getId());
     Float averageRating = reviewRepository.averageRatingByProduct(product.getId());
 
-    return new ProductSummaryDto(
-        product.getName(),
-        product.getDescription(),
-        averageRating,
-        toReviewDtoList(reviews),
-        toSellerDto(product.getSeller()),
-        sales
-    );
+    return toProductSummaryDto(product, reviews, sales, averageRating);
+  }
+
+  private ProductSummaryDto toProductSummaryDto(Product product, List<Review> reviews,
+      Integer sales, Float averageRating) {
+    ProductSummaryDto productSummaryDto = new ProductSummaryDto();
+    productSummaryDto.setName(product.getName());
+    productSummaryDto.setDescription(product.getDescription());
+    productSummaryDto.setAverageRating(averageRating);
+    productSummaryDto.setSales(sales);
+    productSummaryDto.setReviews(toReviewDtoList(reviews));
+    productSummaryDto.setSeller(toSellerDto(product.getSeller()));
+    return productSummaryDto;
   }
 
   private SellerDto toSellerDto(User seller) {
-    return new SellerDto(seller.getId(), seller.getUsername());
+    SellerDto sellerDto = new SellerDto();
+    sellerDto.setId(seller.getId());
+    sellerDto.setUsername(seller.getUsername());
+    return sellerDto;
   }
 
   private List<ReviewDto> toReviewDtoList(List<Review> reviews) {
@@ -56,8 +64,11 @@ public class ProductService {
   }
 
   private ReviewDto toReviewDto(Review review) {
-    return new ReviewDto(review.getAuthor().getName(), review.getDescription(),
-        review.getRating());
+    ReviewDto reviewDto = new ReviewDto();
+    reviewDto.setAuthorName(review.getAuthor().getFullName());
+    reviewDto.setTextContent(review.getDescription());
+    reviewDto.setRating(review.getRating());
+    return reviewDto;
   }
 
 }

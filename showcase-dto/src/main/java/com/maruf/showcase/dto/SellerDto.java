@@ -1,16 +1,13 @@
 package com.maruf.showcase.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.validation.constraints.NotNull;
+import lombok.Data;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
 public class SellerDto {
 
+  @NotNull(message = "seller id field is mandatory")
   private Integer id;
+  @NotNull(message = "seller username field is mandatory")
   private String username;
 }
