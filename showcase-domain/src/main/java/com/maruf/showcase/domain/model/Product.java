@@ -29,8 +29,8 @@ public class Product {
   private String description;
 
   @ManyToOne
-  @JoinColumn(name = "owner_id", nullable = false)
-  private User owner;
+  @JoinColumn(name = "seller_id", nullable = false)
+  private User seller;
 
   @Column(name = "price", nullable = false)
   private BigDecimal price;

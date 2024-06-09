@@ -13,7 +13,7 @@
 
   <groupId>com.maruf</groupId>
   <artifactId>showcase-backend</artifactId>
-  <version>1.0-dto-modeling-SNAPSHOT</version>
+  <version>1.0-endpoint-integration-SNAPSHOT</version>
   <description>A showcase project of backend skills.</description>
   <packaging>pom</packaging>
 
@@ -23,6 +23,7 @@
     <module>showcase-web</module>
     <module>showcase-persistence</module>
     <module>showcase-domain</module>
+    <module>showcase-dto</module>
   </modules>
 
   <properties>

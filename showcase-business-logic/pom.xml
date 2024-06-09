@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.maruf</groupId>
 		<artifactId>showcase-backend</artifactId>
-		<version>1.0-dto-modeling-SNAPSHOT</version>
+		<version>1.0-endpoint-integration-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>showcase-business-logic</artifactId>
@@ -25,6 +25,15 @@
 			<groupId>com.maruf</groupId>
 			<artifactId>showcase-persistence</artifactId>
 			<version>${project.parent.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.maruf</groupId>
+			<artifactId>showcase-dto</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 	</dependencies>
 

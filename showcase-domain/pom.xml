@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.maruf</groupId>
     <artifactId>showcase-backend</artifactId>
-    <version>1.0-dto-modeling-SNAPSHOT</version>
+    <version>1.0-endpoint-integration-SNAPSHOT</version>
   </parent>
 
   <artifactId>showcase-domain</artifactId>

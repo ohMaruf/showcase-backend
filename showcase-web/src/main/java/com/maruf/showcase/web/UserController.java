@@ -1,6 +1,6 @@
 package com.maruf.showcase.web;
 
-import com.maruf.showcase.businesslogic.UserService;
+import com.maruf.showcase.businesslogic.services.UserService;
 import com.maruf.showcase.domain.model.Country;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ public class UserController {
 
   @GetMapping("/origin-countries")
   public ResponseEntity<List<Country>> getAllCountries() {
-    List<Country> countries = userService.getAllCountries();
+    List<Country> countries = userService.getOriginCountries();
     return ResponseEntity.ok(countries);
   }
 }

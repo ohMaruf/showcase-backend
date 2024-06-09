@@ -28,8 +28,8 @@ public class Review {
   private Short rating;
 
   @ManyToOne
-  @JoinColumn(name = "user_id", nullable = false)
-  private User user;
+  @JoinColumn(name = "author_id", nullable = false)
+  private User author;
 
   @ManyToOne
   @JoinColumn(name = "product_id", nullable = false)
