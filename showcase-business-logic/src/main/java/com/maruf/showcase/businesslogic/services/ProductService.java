@@ -70,5 +70,4 @@ public class ProductService {
     reviewDto.setRating(review.getRating());
     return reviewDto;
   }
-
 }

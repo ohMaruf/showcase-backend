@@ -11,7 +11,7 @@ public class ReviewDto {
   private String authorName;
   @NotNull(message = "review textContent field is mandatory")
   private String textContent;
-  @NotNull(message = "review start field is mandatory")
+  @NotNull(message = "review rating field is mandatory")
   @Range(min = 1, max = 5)
   private Short rating;
 }
