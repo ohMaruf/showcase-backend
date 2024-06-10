@@ -23,6 +23,7 @@
     <module>showcase-web</module>
     <module>showcase-persistence</module>
     <module>showcase-domain</module>
+    <module>showcase-dto</module>
   </modules>
 
   <properties>

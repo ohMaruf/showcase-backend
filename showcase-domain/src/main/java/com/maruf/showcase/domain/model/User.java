@@ -7,7 +7,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.time.LocalDate;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
 
@@ -34,11 +36,14 @@ public class User {
   @Column(name = "email", nullable = false, length = 60)
   private String email;
 
-  @Column(name = "username", nullable = false, length = 15)
+  @Column(name = "username", nullable = false, length = 15, unique = true)
   private String username;
 
   @ManyToOne
   @JoinColumn(name = "city_id", nullable = false)
   private City city;
 
+  public String getFullName() {
+    return name + " " + surname;
+  }
 }
