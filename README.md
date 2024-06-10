@@ -4,7 +4,21 @@
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Apache Maven](https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white)
-[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
+[![License](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
+
+## Table of Contents
+<!-- TOC -->
+* [Showcase Backend](#showcase-backend)
+  * [Table of Contents](#table-of-contents)
+  * [Overview](#overview)
+  * [Features](#features)
+  * [Future Developments](#future-developments)
+  * [Getting Started](#getting-started)
+    * [Requirements](#requirements)
+    * [Installation Steps](#installation-steps)
+  * [Contributing](#contributing)
+  * [Liked my work?](#liked-my-work)
+<!-- TOC -->
 
 ## Overview
 This project shows the current best practices for backend development
