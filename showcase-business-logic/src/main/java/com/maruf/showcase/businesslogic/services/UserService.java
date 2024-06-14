@@ -17,7 +17,6 @@ public class UserService {
   private final CountryRepository countryRepository;
   private final CityRepository cityRepository;
 
-
   @Autowired
   public UserService(UserRepository userRepository, CountryRepository countryRepository,
       CityRepository cityRepository) {
@@ -37,12 +36,13 @@ public class UserService {
   }
 
   private User userDtoToUser(UserDto userDto) {
-    User user = new User();
-    user.setName(userDto.getName());
-    user.setSurname(userDto.getSurname());
-    user.setEmail(userDto.getEmail());
-    user.setUsername(userDto.getUsername());
-    user.setCity(cityRepository.getReferenceById(userDto.getCityId()));
-    return user;
+    return User.builder()
+        .name(userDto.getName())
+        .surname(userDto.getSurname())
+        .email(userDto.getEmail())
+        .username(userDto.getUsername())
+        .dateOfBirth(userDto.getDateOfBirth())
+        .city(cityRepository.getReferenceById(userDto.getCityId()))
+        .build();
   }
 }
