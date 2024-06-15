@@ -42,21 +42,21 @@ public class ProductService {
 
   private ProductSummaryDto toProductSummaryDto(Product product, List<Review> reviews,
       Integer sales, Float averageRating) {
-    ProductSummaryDto productSummaryDto = new ProductSummaryDto();
-    productSummaryDto.setName(product.getName());
-    productSummaryDto.setDescription(product.getDescription());
-    productSummaryDto.setAverageRating(averageRating);
-    productSummaryDto.setSales(sales);
-    productSummaryDto.setReviews(toReviewDtoList(reviews));
-    productSummaryDto.setSeller(toSellerDto(product.getSeller()));
-    return productSummaryDto;
+    return ProductSummaryDto.builder()
+        .name(product.getName())
+        .description(product.getDescription())
+        .averageRating(averageRating)
+        .sales(sales)
+        .reviews(toReviewDtoList(reviews))
+        .seller(toSellerDto(product.getSeller()))
+        .build();
   }
 
   private SellerDto toSellerDto(User seller) {
-    SellerDto sellerDto = new SellerDto();
-    sellerDto.setId(seller.getId());
-    sellerDto.setUsername(seller.getUsername());
-    return sellerDto;
+    return SellerDto.builder()
+        .id(seller.getId())
+        .username(seller.getUsername())
+        .build();
   }
 
   private List<ReviewDto> toReviewDtoList(List<Review> reviews) {
@@ -64,10 +64,10 @@ public class ProductService {
   }
 
   private ReviewDto toReviewDto(Review review) {
-    ReviewDto reviewDto = new ReviewDto();
-    reviewDto.setAuthorName(review.getAuthor().getFullName());
-    reviewDto.setTextContent(review.getDescription());
-    reviewDto.setRating(review.getRating());
-    return reviewDto;
+    return ReviewDto.builder()
+        .authorName(review.getAuthor().getFullName())
+        .textContent(review.getDescription())
+        .rating(review.getRating())
+        .build();
   }
 }

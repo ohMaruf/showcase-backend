@@ -1,8 +1,7 @@
-package com.maruf.showcase.web;
+package com.maruf.showcase.web.controllers;
 
 import com.maruf.showcase.businesslogic.services.UserService;
-import com.maruf.showcase.domain.model.Country;
-import com.maruf.showcase.domain.model.User;
+import com.maruf.showcase.dto.CountryDto;
 import com.maruf.showcase.dto.UserDto;
 import java.util.List;
 import javax.validation.Valid;
@@ -26,8 +25,8 @@ public class UserController {
   }
 
   @GetMapping("/origin-countries")
-  public ResponseEntity<List<Country>> getAllCountries() {
-    List<Country> countries = userService.getOriginCountries();
+  public ResponseEntity<List<CountryDto>> getAllCountries() {
+    List<CountryDto> countries = userService.getOriginCountries();
     return ResponseEntity.ok(countries);
   }
 

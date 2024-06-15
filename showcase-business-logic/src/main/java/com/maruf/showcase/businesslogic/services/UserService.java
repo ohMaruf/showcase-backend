@@ -2,6 +2,7 @@ package com.maruf.showcase.businesslogic.services;
 
 import com.maruf.showcase.domain.model.Country;
 import com.maruf.showcase.domain.model.User;
+import com.maruf.showcase.dto.CountryDto;
 import com.maruf.showcase.dto.UserDto;
 import com.maruf.showcase.persistence.repositories.CityRepository;
 import com.maruf.showcase.persistence.repositories.CountryRepository;
@@ -17,7 +18,6 @@ public class UserService {
   private final CountryRepository countryRepository;
   private final CityRepository cityRepository;
 
-
   @Autowired
   public UserService(UserRepository userRepository, CountryRepository countryRepository,
       CityRepository cityRepository) {
@@ -26,8 +26,8 @@ public class UserService {
     this.cityRepository = cityRepository;
   }
 
-  public List<Country> getOriginCountries() {
-    return countryRepository.findDistinctUserbaseCountries();
+  public List<CountryDto> getOriginCountries() {
+    return countryListToCountryDtoList(countryRepository.findDistinctUserbaseCountries());
   }
 
   public UserDto createUser(UserDto userDto) {
@@ -36,13 +36,25 @@ public class UserService {
     return userDto;
   }
 
+  private List<CountryDto> countryListToCountryDtoList(List<Country> countryList) {
+    return countryList.stream().map(this::contryToCountryDto).toList();
+  }
+
+  private CountryDto contryToCountryDto(Country country) {
+    return CountryDto.builder()
+        .code(country.getCode())
+        .name(country.getName())
+        .build();
+  }
+
   private User userDtoToUser(UserDto userDto) {
-    User user = new User();
-    user.setName(userDto.getName());
-    user.setSurname(userDto.getSurname());
-    user.setEmail(userDto.getEmail());
-    user.setUsername(userDto.getUsername());
-    user.setCity(cityRepository.getReferenceById(userDto.getCityId()));
-    return user;
+    return User.builder()
+        .name(userDto.getName())
+        .surname(userDto.getSurname())
+        .email(userDto.getEmail())
+        .username(userDto.getUsername())
+        .dateOfBirth(userDto.getDateOfBirth())
+        .city(cityRepository.getReferenceById(userDto.getCityId()))
+        .build();
   }
 }

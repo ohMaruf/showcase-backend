@@ -1,6 +1,5 @@
 package com.maruf.showcase.persistence.repositories;
 
-import com.maruf.showcase.domain.model.Product;
 import com.maruf.showcase.domain.model.Review;
 import java.util.List;
 import org.springframework.data.jpa.repository.Query;

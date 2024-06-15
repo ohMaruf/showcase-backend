@@ -1,8 +1,8 @@
 package com.maruf.showcase.persistence.repositories;
 
-import com.maruf.showcase.domain.model.User;
+import com.maruf.showcase.domain.model.State;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User, Integer> {
+public interface StateRepository extends JpaRepository<State, Integer> {
 
 }

@@ -1,5 +1,6 @@
-package com.maruf.showcase.web;
+package com.maruf.showcase.web.controllers;
 
+import com.maruf.showcase.businesslogic.exceptions.ResourceNotFoundException;
 import com.maruf.showcase.businesslogic.services.ProductService;
 import com.maruf.showcase.dto.ProductSummaryDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class ProductController {
   }
 
   @GetMapping("/{productId}")
-  public ProductSummaryDto getAverageRating(@PathVariable Integer productId) {
+  public ProductSummaryDto getAverageRating(@PathVariable Integer productId) throws ResourceNotFoundException {
     return service.getProductById(productId);
   }
 }
