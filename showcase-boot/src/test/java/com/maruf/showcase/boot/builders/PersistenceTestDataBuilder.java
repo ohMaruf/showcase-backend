@@ -8,7 +8,6 @@ import com.maruf.showcase.domain.model.Product;
 import com.maruf.showcase.domain.model.Review;
 import com.maruf.showcase.domain.model.State;
 import com.maruf.showcase.domain.model.User;
-import com.maruf.showcase.dto.UserDto;
 import java.math.BigDecimal;
 import java.security.SecureRandom;
 import java.time.LocalDate;
@@ -18,18 +17,6 @@ public class PersistenceTestDataBuilder {
   private static int counter = 0;
   private static final SecureRandom RANDOM = new SecureRandom();
   private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-  public static UserDto randomUserDto() {
-    counter++;
-    return UserDto.builder()
-        .name("TestUser" + counter)
-        .surname("TestSurname" + counter)
-        .dateOfBirth(LocalDate.now().minusDays(1))
-        .email("test" + counter + "@email.com")
-        .username("testUsername" + counter)
-        .cityId(1)
-        .build();
-  }
 
   public static Product randomProduct(User seller) {
     counter++;

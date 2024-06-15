@@ -2,10 +2,12 @@ package com.maruf.showcase.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.Builder;
 import lombok.Data;
 import org.hibernate.validator.constraints.Range;
 
 @Data
+@Builder
 public class ReviewDto {
 
   @NotBlank(message = "Author name field cannot be blank")
