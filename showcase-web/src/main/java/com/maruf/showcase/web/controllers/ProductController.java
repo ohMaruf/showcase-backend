@@ -1,4 +1,4 @@
-package com.maruf.showcase.web;
+package com.maruf.showcase.web.controllers;
 
 import com.maruf.showcase.businesslogic.exceptions.ResourceNotFoundException;
 import com.maruf.showcase.businesslogic.services.ProductService;

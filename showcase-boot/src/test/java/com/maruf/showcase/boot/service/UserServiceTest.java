@@ -7,6 +7,7 @@ import com.maruf.showcase.boot.builders.ServiceTestDataBuilder;
 import com.maruf.showcase.businesslogic.services.UserService;
 import com.maruf.showcase.domain.model.Country;
 import com.maruf.showcase.domain.model.User;
+import com.maruf.showcase.dto.CountryDto;
 import com.maruf.showcase.dto.UserDto;
 import com.maruf.showcase.persistence.repositories.CityRepository;
 import com.maruf.showcase.persistence.repositories.CountryRepository;
@@ -36,12 +37,12 @@ class UserServiceTest {
 
   @Test
   void whenGetAllOriginCountries_thenReturnCountries() {
-    List<Country> expected = List.of(ServiceTestDataBuilder.randomCountry());
-    doReturn(expected).when(countryRepository).findDistinctUserbaseCountries();
+    List<Country> expectedCountries = List.of(ServiceTestDataBuilder.randomCountry());
+    doReturn(expectedCountries).when(countryRepository).findDistinctUserbaseCountries();
 
-    List<Country> actual = userService.getOriginCountries();
+    List<CountryDto> actual = userService.getOriginCountries();
 
-    Assertions.assertThat(actual).hasSameSizeAs(expected);
+    Assertions.assertThat(actual).hasSameSizeAs(expectedCountries);
   }
 
   @Test
@@ -60,5 +61,16 @@ class UserServiceTest {
     UserDto actual = userService.createUser(expected);
 
     Assertions.assertThat(actual).isEqualTo(expected);
+  }
+
+  private List<CountryDto> countryListToCountryDtoList(List<Country> countryList) {
+    return countryList.stream().map(this::contryToCountryDto).toList();
+  }
+
+  private CountryDto contryToCountryDto(Country country) {
+    return CountryDto.builder()
+        .code(country.getCode())
+        .name(country.getName())
+        .build();
   }
 }

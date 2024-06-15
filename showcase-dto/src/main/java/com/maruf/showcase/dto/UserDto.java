@@ -34,7 +34,6 @@ public class UserDto {
   @Email(message = "Invalid email", regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
   private String email;
 
-  @NotBlank(message = "Date of birth field cannot be blank")
   @NotNull(message = "Date of birth is mandatory")
   @Past
   private LocalDate dateOfBirth;
